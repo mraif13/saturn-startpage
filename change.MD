@@ -18,3 +18,6 @@ The current design looks kinda dated and bland.
 
 ## Chrome support?
 V3 will come with chrome support out of the box. 
+
+## When will it release?
+Currently I don't have a proper release date, but it will probably be around November or December of this year. 
