@@ -1,6 +1,6 @@
 /*
 Saturn Startpage: Open source & free.
-v2 VAR CSS
+v2 CSS Core
 */
 
 /* poppins-200 - latin */
@@ -106,6 +106,8 @@ v2 VAR CSS
   --for-white: #ffffff;
   --snip-wid-btn: #beb7b7;
   --add-link-border: rgb(150, 151, 151);
+  --settings-warning-bg: rgba(247, 247, 1, 0.322);
+  --delete-warning-bg: rgba(231, 19, 19, 0.644);
   /* Multiple transition speeds */
   --transition-speed-fast: 0.1s;
   --transition-speed-default: 0.2s;
@@ -142,8 +144,10 @@ v2 VAR CSS
   --reddit-hover-color: #39414e;
   --brightness-headerimg: brightness(1.1);
   --for-white: #ffffff;
-  --snip-wid-btn: #232933;
+  --snip-wid-btn: #23293363;
+  --settings-warning-bg: rgba(255, 255, 0, 0.075);
   --add-link-border: rgb(43, 52, 56);
+  --delete-warning-bg: rgba(197, 42, 42, 0.76);
   --transition-speed-fast: 0.1s;
   --transition-speed-default: 0.2s;
   --transition-speed-slow: 0.3s;
@@ -579,13 +583,6 @@ img {
   background: var(--sat-shortcuts-hover);
 }
 
-.dark-mode-bg,
-.dark-mode-bg2,
-.dark-mode-bg3,
-.dark-mode-bg5 {
-  color: var(--sat-ids);
-  background: var(--sat-setting-bg-effect);
-}
 .gudmorning {
   background-color: var(--gudmrning-txt-bg);
   background-image: var(--gudmrning-txt);
@@ -608,10 +605,11 @@ img {
 /* Neon effect */
 
 .snip-wid button {
-  background-color: var(--snip-wid-btn);
+  background-color: var(--sat-setting-bg-effect);
   color: var(--sat-heading);
 }
 
+.removebtn:hover,
 .snip-wid button:hover,
 .button-modal:hover,
 .app:hover,
@@ -653,9 +651,16 @@ img {
   filter: var(--brightness-headerimg);
 }
 
-.removebtn:hover,
 #fav-link a:hover {
   background-color: var(--reddit-hover-color);
   color: var(--sat-ids);
   transition: var(--transition-speed-default);
+}
+
+.removebtn:hover {
+  background-color: var(--delete-warning-bg);
+  transition: var(--transition-speed-default);
+}
+.container {
+  color: var(--sat-ids);
 }

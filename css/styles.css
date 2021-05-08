@@ -70,7 +70,7 @@ body {
   font-size: 15x;
 }
 
-/* V1.0 Settings page - (BETA) */
+/* V1.0 Settings page - (Unstable) */
 
 /* Snippet widgets */
 
@@ -94,6 +94,9 @@ body {
   padding: 20px;
   font-style: normal;
 }
+
+/* Settings */
+
 .modal {
   background-color: #15181fd8;
   position: fixed;
@@ -112,7 +115,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 5px 10px;
-  width: 59rem;
+  width: 60rem;
   height: 35rem;
   overflow-y: scroll;
   border-radius: 10px;
@@ -128,13 +131,10 @@ body {
   opacity: 1;
   visibility: visible;
   transform: scale(1);
-  transition: visibility 0s linear 0s, opacity 35ms 0s, transform 35ms;
+  transition: visibility 0s linear 0s, opacity 245ms 0s, transform 245ms;
 }
-.created-by {
-  width: 150px;
-  height: auto;
-}
-/* Dark mode switch */
+
+/* Settings: Dark mode switch */
 
 .theme-switch-wrapper {
   display: flex;
@@ -144,7 +144,7 @@ body {
   display: inline-block;
   position: relative;
   width: 66px;
-  height: 30px;
+  height: 33px;
 }
 
 .theme-switch input {
@@ -152,7 +152,7 @@ body {
 }
 
 .slider {
-  background: #475469;
+  background: #2b333f;
   cursor: pointer;
   left: 2px;
   position: absolute;
@@ -162,17 +162,17 @@ body {
 }
 
 .slider:before {
-  border: 3px solid #63aadf;
+  border: 3px solid var(--sat-accent-color1);
   content: "";
-  left: 3px;
+  left: 7px;
   position: absolute;
-  bottom: 3px;
-  width: 23px;
-  height: 18px;
+  bottom: 5px;
+  width: 17px;
+  height: 17px;
 }
 
 input:checked + .slider {
-  background-color: #303a58;
+  background-color: #0c436dbe;
 }
 
 input:checked + .slider:before {
@@ -180,11 +180,11 @@ input:checked + .slider:before {
 }
 
 .slider.round {
-  border-radius: 10px;
+  border-radius: 100px;
 }
 
 .slider.round:before {
-  border-radius: 9px;
+  border-radius: 100px;
 }
 
 .yourapps {
@@ -192,7 +192,7 @@ input:checked + .slider:before {
   font-weight: 500;
 }
 
-/* Button used to open the seetings page */
+/* Button used to open the settings page */
 
 .button-modal {
   outline: none;
@@ -214,6 +214,52 @@ input:checked + .slider:before {
 .external-links:hover {
   color: var(--sat-accent-color1);
   text-decoration: underline;
+}
+
+/* Settings navigation */
+ul.tabs {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+ul.tabs li {
+  font-weight: 500;
+  background: none;
+  color: var(--sat-ids);
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+ul.tabs li i {
+  color: var(--sat-accent-color1);
+}
+
+ul.tabs li:hover {
+  color: var(--sat-ids);
+  background: var(--sat-setting-bg-effect);
+  transition: var(--transition-speed-default);
+}
+
+ul.tabs li.current {
+  background: var(--sat-setting-bg-effect);
+  color: var(--sat-ids);
+  font-weight: 500;
+}
+
+.tab-content {
+  display: none;
+  background: var(--sat-setting-bg-effect);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.tab-content h4 i {
+  color: var(--sat-accent-color1);
+}
+
+.tab-content.current {
+  display: inherit;
 }
 
 /* Shortcuts */
@@ -264,36 +310,6 @@ input:checked + .slider:before {
   visibility: visible;
 }
 
-/* > 600px use these to fix the UI */
-/* [ALPHA] Super buggy atm */
-
-@media (max-width: 600px) {
-  .app {
-    width: 7%;
-    margin: 0 0.7% 15px;
-    padding: 12px 20px;
-  }
-  .app .tooltiptext {
-    width: 60px;
-    padding: 5px 3px;
-    margin-left: -40px;
-  }
-  .modal-content {
-    width: 45%;
-    height: 40%;
-  }
-}
-
-/* Adds a lighter background under each element in modal */
-.dark-mode-bg3,
-.dark-mode-bg,
-.dark-mode-bg2,
-.dark-mode-bg5 {
-  padding: 10px;
-  border-radius: 10px;
-  margin-top: 9px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
 /* More apps */
 
 .morecontainer {
@@ -364,7 +380,7 @@ input:checked + .slider:before {
   }
 }
 
-.snip-wid button:hover,
+.snip-wid div:hover,
 #favorite-links:hover {
   cursor: pointer;
   transition: var(--transition-speed-default);
@@ -387,6 +403,8 @@ input:checked + .slider:before {
   padding: 9px 9px; /* Some padding */
   cursor: pointer; /* Pointer/hand icon */
   margin: 2px;
+  font-weight: 500;
+  border: 2px solid var(--sat-setting-bg-effect);
 }
 
 /* Clear floats (clearfix hack) */
@@ -451,7 +469,7 @@ ul li {
   padding: 10px;
   outline: none;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   border: 2px solid var(--add-link-border);
 }
 #add-link-form input:hover {
@@ -461,7 +479,6 @@ ul li {
 
 #add-link-form input:focus {
   border: 2px solid var(--sat-accent-color1);
-  transform: scale(1.1);
 }
 
 #new-link-button button,
@@ -483,6 +500,6 @@ ul li {
 #new-link-button button:hover,
 #add-link-form button:hover {
   background-color: var(--reddit-hover-color);
-  transition: 0.1s;
+  transition: var(--transition-speed-default);
   color: var(--sat-ids);
 }

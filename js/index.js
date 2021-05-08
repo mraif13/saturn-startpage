@@ -6,7 +6,7 @@ const determineGreet = (
       ? "morning! "
       : hours < 18
       ? "afternoon! "
-      : hours < 21 // After 9PM display night instead.
+      : hours < 21 // After 21:00/9:00 display night instead.
       ? "evening! "
       : "night! "
   } `);
@@ -115,11 +115,7 @@ function closeNav() {
   document.getElementById("myNav").style.height = "0%";
 }
 
-
-
-// Hide feature: 
-
-// Hide favorites
+// Hide favorites, jQuery.
 
 $(function () {
   var status = localStorage.getItem("favorites_hidden");
@@ -140,7 +136,7 @@ $(function () {
   });
 });
 
-// Hide app row 
+// Hide App row .2
 
 $(function () {
   var status = localStorage.getItem("apps_row2_hidden");
@@ -158,5 +154,18 @@ $(function () {
       $(".apps_row2").show();
     }
     localStorage.setItem("apps_row2_hidden", this.checked);
+  });
+});
+
+// Settings Navigation.
+$(document).ready(function () {
+  $("ul.tabs li").click(function () {
+    var tab_id = $(this).attr("data-tab");
+
+    $("ul.tabs li").removeClass("current");
+    $(".tab-content").removeClass("current");
+
+    $(this).addClass("current");
+    $("#" + tab_id).addClass("current");
   });
 });
