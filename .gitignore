@@ -15,3 +15,5 @@ node_modules
 new_features
 package-lock.json
 package.json
+updates.json
+update.json
