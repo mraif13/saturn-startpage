@@ -27,6 +27,11 @@ const search_engines = [
     placeholder: "YouTube",
     action: "https://www.youtube.com/results?q=",
   },
+  {
+    src: "youtube.svg",
+    placeholder: "Codepen",
+    action: "https://codepen.io/search/pens?q=",
+  },
 ];
 
 const cycleSearchEngines = (se) => {
