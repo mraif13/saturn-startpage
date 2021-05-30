@@ -4,17 +4,15 @@ should improve the overall performance quite a bit. These changes might make Sat
 
 ## FAQ
 
+
 ## Will this change remove my favorites links?
-Most likely *no* but favorites might become unstable.
+Most likely yes, the local storage variable used to store favorites will be changed, thus removing all favorites along with it.
 
 ## Will this version improve saturn for mobile use?
 Yes, this is one of main reason why I'm completely rewriting saturn.
 
-## If I dislike the new design can I go back?
-Of course, the older version will still get updates for as long as I have time to support it.
-
-## Why the redesign?
-The current design looks kinda dated and bland. 
+## Will Saturn get a redesign?
+Yes and no, some features like Apps list and favorites will get a complete overhaul but apart from those everything will stay the same. The biggest change will be in the backend where I plan to rewrite most of the CSS to Sass or something else and completely rewrite the Main html file.
 
 ## Chrome support?
 V3 will come with chrome support out of the box. 
